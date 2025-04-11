@@ -22,7 +22,7 @@ func Load() *Config {
 	cfg := &Config{
 		DatabaseURL: getEnv("DATABASE_URL", ""),
 		Port:       getEnv("PORT", "3001"),
-		JWTSecret:  getEnv("JWT_SECRET", generateRandomSecret()),
+		JWTSecret:  getEnv("JWT_SECRET", ""),
 	}
 
 	// Валидация обязательных полей
