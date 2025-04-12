@@ -28,6 +28,7 @@ func (s *AuthService) Register(ctx context.Context, user *models.User) error {
 
 func (s *AuthService) Login(ctx context.Context, username, password string) (*models.User, error) {
 	user, err := s.userRepo.GetUserByUsername(ctx, username)
+
 	if err != nil {
 		return nil, errors.New("user not found")
 	}
